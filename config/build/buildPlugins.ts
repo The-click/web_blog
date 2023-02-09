@@ -15,7 +15,10 @@ export function buildPlugins({paths, isDev}:BuildOptions):webpack.WebpackPluginI
             filename: isDev ? "css/[name].css" : "css/[name].[contenthash].css",
             chunkFilename: isDev? "css/[id].css" : "css/[id].[contenthash].css",
         }),
-        new webpack.ProgressPlugin()
+        new webpack.ProgressPlugin(),
+        new webpack.DefinePlugin({
+            __IS_DEV__:JSON.stringify(isDev)
+        })
 
     ]
 
