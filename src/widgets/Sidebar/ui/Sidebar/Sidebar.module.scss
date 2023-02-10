@@ -1,16 +1,16 @@
-.sidebar{
+.sidebar {
     height: calc(100vh - var(--navbar-height));
-    background-color:var(--invert-bg-color);
+    background-color: var(--invert-bg-color);
     width: var(--sidebar-width);
     position: relative;
     transition: width 0.3s;
-    
 }
-.collaps{
+
+.collaps {
     width: var(--sidebar-width-collapsed);
 }
 
-.switcher{
+.switcher {
     position: absolute;
     bottom: 20px;
     width: 100%;

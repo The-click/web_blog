@@ -6,19 +6,18 @@
 
 
 .app {
-    font:var(--font-n);
-
+    font: var(--font-n);
     color: var(--primary-color);
     background: var(--bg-color);
-
     min-height: 100vh;
 }
 
 
-.content-page{
+.content-page {
     display: flex;
 }
-.page-wrapper{
+
+.page-wrapper {
     flex-grow: 1;
     padding: 20px;
 }

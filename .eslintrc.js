@@ -20,7 +20,8 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    'prettier'
+    'prettier',
+    'i18next'
   ],
   rules: {
     'prettier/prettier': 'off',
@@ -36,6 +37,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
+    "i18next/no-literal-string": 'warn'
   },
   globals: {
     '__IS_DEV__': true,
