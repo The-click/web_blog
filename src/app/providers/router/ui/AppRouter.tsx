@@ -5,20 +5,15 @@ import { MainPage } from 'pages/Main'
 import { AboutPage } from 'pages/About'
 import { routeConfig } from 'shared/config/routerConfig/routeConfig'
 
-const AppRouter = () => {
-  return (
+const AppRouter = () => (
     <Suspense fallback={<div>Loading...</div>}>
       <div className='page-wrapper'>
     <Routes>
-       {Object.values(routeConfig).map(({path, element}) => {
-        return <Route path={path} element={element} />
-
-       })}
+       {Object.values(routeConfig).map(({path, element}) => <Route path={path} element={element} />)}
     </Routes> 
     </div>
     </Suspense>
   )
-}
 
 
 export default AppRouter

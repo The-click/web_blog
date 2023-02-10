@@ -1,8 +1,8 @@
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import path from "path"
 import  webpack from "webpack"
-import { BuildOptions } from '../type/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from '../type/config';
 
 
 export function buildPlugins({paths, isDev}:BuildOptions):webpack.WebpackPluginInstance[]{

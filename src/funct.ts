@@ -1,6 +1,4 @@
 
 
-export const hellowSay = (arg:string) => {
-    return 'HEllow i new is ' + arg 
-}
+export const hellowSay = (arg:string) => `HEllow i new is ${  arg}`
 
