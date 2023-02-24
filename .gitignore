@@ -2,3 +2,4 @@ node_modules
 /bild
 /dist
 .idea
+/storybook-static
