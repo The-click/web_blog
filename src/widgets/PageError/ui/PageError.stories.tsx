@@ -3,7 +3,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
-import { Sidebar } from "./Sidebar";
 import { PageError } from "./PageError";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

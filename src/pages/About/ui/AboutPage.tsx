@@ -1,12 +1,12 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-const AboutPage = () => {
-  const { t, i18n } = useTranslation("about");
+interface AboutPageProps {}
 
-  return (
-    <div>{t("О сайте", {ns:"about"})}</div>
-  )
-}
+const AboutPage: React.FC<AboutPageProps> = () => {
+    const { t, i18n } = useTranslation("about");
 
-export default AboutPage
+    return <div>{t("О сайте", { ns: "about" })}</div>;
+};
+
+export default AboutPage;
