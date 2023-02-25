@@ -1,5 +1,7 @@
 node_modules
-/bild
+/build
 /dist
 .idea
 /storybook-static
+.loki/report.json
+.loki/report.html
