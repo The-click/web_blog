@@ -6,10 +6,6 @@
     transition: width 0.3s;
 }
 
-.collaps {
-    width: var(--sidebar-width-collapsed);
-}
-
 .switcher {
     position: absolute;
     bottom: 20px;
@@ -18,4 +14,48 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+
+.collapsBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.item {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    margin-left: 15px;
+    transition: all .2s;
+}
+
+.icon {
+    fill: var(--invert-primary-color);
+}
+
+.collaps {
+    width: var(--sidebar-width-collapsed);
+
+    .switcher {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link {
+        opacity: 0;
+        width: 0;
+
+    }
 }
