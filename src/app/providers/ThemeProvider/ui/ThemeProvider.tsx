@@ -19,13 +19,14 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
         setTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK);
     };
 
-    const defaultProps = useMemo(
-        () => ({
+    const defaultProps = useMemo(() => {
+        document.body.className = theme;
+
+        return {
             theme,
             setTheme,
-        }),
-        [theme]
-    );
+        };
+    }, [theme]);
     return (
         <ThemeContext.Provider value={defaultProps}>
             {children}

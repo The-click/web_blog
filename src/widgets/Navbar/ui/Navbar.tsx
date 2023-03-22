@@ -1,3 +1,4 @@
+import { LoginModal } from "features/AuthByUsername";
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -16,25 +17,23 @@ export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
     }, []);
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
                 <Button
-                    onClick={onToggleModal}
+                    onClick={onShowModal}
                     theme={ThemeButton.CLEAR_INVERTED}
                 >
                     {t("Войти")}
                 </Button>
             </div>
-            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                {t(`Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptas sed maxime pariatur explicabo incidunt. Amet, unde
-                inventore consequuntur numquam odit et blanditiis dolores
-                tempore enim nobis laboriosam! Corrupti, quia sequi.`)}
-            </Modal>
+            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
         </div>
     );
 };

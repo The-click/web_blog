@@ -1,4 +1,6 @@
 {
+  "+": "+",
+  "-": "-",
   "About": "About",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
     "\n                Voluptas sed maxime pariatur explicabo incidunt": {
@@ -10,6 +12,8 @@
   "Main": "Main",
   "Toggle": "Toggle",
   "hello": "hello",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password",
   "Войти": "Enter",
   "Краткий перевод": "En",
   "Обновть страницу": "Обновть страницу",
@@ -17,6 +21,5 @@
   "Перевоeeeeeд": "Перевоeeeeeд",
   "Перевод": "Translate",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
-  "Страница не найдена": "Page not found",
-  "-": "-"
+  "Страница не найдена": "Page not found"
 }
