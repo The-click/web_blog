@@ -12,17 +12,8 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  themes: {
-    default: 'light',
-    list: [
-      { name: 'light', class: ['app', 'light'], },
-      { name: 'dark', class: ['app', 'dark'], },
-    ],
-
-  }
 }
-// addDecorator(withThemes)
-// addDecorator(TranslationDecorator)
+
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
