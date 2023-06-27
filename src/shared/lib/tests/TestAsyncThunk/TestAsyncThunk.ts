@@ -1,6 +1,5 @@
-import { AsyncThunkAction, isAsyncThunkAction } from "@reduxjs/toolkit";
+import { AsyncThunkAction } from "@reduxjs/toolkit";
 import { StateSchema } from "app/providers/StoreProvider";
-import { type } from "os";
 
 type ActionCreatorType<Return, Arg, RejectValue> = (
     arg: Arg
