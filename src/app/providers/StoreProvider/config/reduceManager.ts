@@ -25,9 +25,7 @@ export function createReducerManager(
                     delete state[key];
                 });
                 keysToRemove = [];
-                console.log("reduce after delete ", state);
             }
-            console.log("reduce  ", state);
 
             return combinedReducer(state, action);
         },
@@ -50,8 +48,6 @@ export function createReducerManager(
             delete reducers[key];
 
             keysToRemove.push(key);
-            console.log("remove after delete ", reducers);
-
             combinedReducer = combineReducers(reducers);
         },
     };
