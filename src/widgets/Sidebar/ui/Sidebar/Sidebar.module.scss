@@ -30,21 +30,6 @@
     margin-left: 30px;
 }
 
-.item {
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.link {
-    margin-left: 15px;
-    transition: all .2s;
-}
-
-.icon {
-    fill: var(--invert-primary-color);
-}
-
 .collaps {
     width: var(--sidebar-width-collapsed);
 

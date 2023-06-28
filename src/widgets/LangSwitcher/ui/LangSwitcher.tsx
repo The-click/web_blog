@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Theme, useTheme } from "app/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
 import ThemeDark from "shared/assets/icon/theme-dark.svg";
@@ -12,7 +12,7 @@ interface LangSwitcherProps {
     short: boolean;
 }
 
-export const LangSwitcher: React.FC<LangSwitcherProps> = (props) => {
+export const LangSwitcher = memo((props: LangSwitcherProps) => {
     const { className, short } = props;
     const { t, i18n } = useTranslation();
 
@@ -29,4 +29,4 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = (props) => {
             {t(short ? "Краткий перевод" : "Перевод")}
         </Button>
     );
-};
+});

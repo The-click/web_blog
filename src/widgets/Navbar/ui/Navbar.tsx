@@ -1,5 +1,5 @@
 import { LoginModal } from "features/AuthByUsername";
-import { useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -16,16 +16,11 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const auhtData = useSelector(getUserAuthData);
-    const store = useSelector((state: StateSchema) => state);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        console.log("navbar store", store);
-    }, [store]);
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -67,4 +62,4 @@ export const Navbar = ({ className }: NavbarProps) => {
             )}
         </div>
     );
-};
+});
