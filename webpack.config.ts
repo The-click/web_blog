@@ -1,28 +1,27 @@
-import path from 'path'
-import webpack from 'webpack'
-import { buildWebpackConfig } from './config/buildWebpackConfig';
-import { BuildPaths, BuildEnv } from './config/type/config';
+import path from "path";
+import webpack from "webpack";
+import { buildWebpackConfig } from "./config/buildWebpackConfig";
+import { BuildPaths, BuildEnv } from "./config/type/config";
 
-
-
-export default (env:BuildEnv) => {
+export default (env: BuildEnv) => {
     const paths: BuildPaths = {
-        entry:path.resolve(__dirname, 'src', 'index.tsx'),
-        output:path.resolve(__dirname, 'dist'),
-        html: path.resolve(__dirname, 'public', 'index.html'),
-        src:path.resolve(__dirname, 'src'),
-    }
+        entry: path.resolve(__dirname, "src", "index.tsx"),
+        output: path.resolve(__dirname, "dist"),
+        html: path.resolve(__dirname, "public", "index.html"),
+        src: path.resolve(__dirname, "src"),
+    };
 
-    const mode = env.mode || "development"
-    const isDev = mode === 'development'
-    const PORT = env.port || 3000
-    
+    const mode = env.mode || "development";
+    const isDev = mode === "development";
+    const PORT = env.port || 3000;
+    const apiUrl = env.apiUrl || "http://localhost:8000";
+
     const config: webpack.Configuration = buildWebpackConfig({
         mode,
         paths,
         isDev,
-        port: PORT
-        
-    })
-    return config
-}
+        port: PORT,
+        apiUrl,
+    });
+    return config;
+};
