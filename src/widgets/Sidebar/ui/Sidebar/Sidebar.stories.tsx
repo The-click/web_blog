@@ -20,12 +20,8 @@ const Template: ComponentStory<typeof Sidebar> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {
-    children: "Text",
-};
+Primary.args = {};
 
 export const Dark = Template.bind({});
-Dark.args = {
-    children: "Text",
-};
+Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
