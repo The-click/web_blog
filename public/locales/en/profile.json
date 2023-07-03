@@ -4,5 +4,11 @@
 
     "Редактировать": "Edit",
     "Ваше имя": "Your name",
-    "Ваша фамилия": "Your lastname"
+    "Ваша фамилия": "Your lastname",
+    "Введите ваше имя": "Enter your name",
+    "Введите вашу фамилию": "Enter your lastname",
+    "Произошла ошибка при загрузке профиля": "Error during load profile",
+    "Попробуйте обновить страницу": "Try refresh page",
+    "Change currancy": "Change currancy",
+    "Change country": "Change country"
 }

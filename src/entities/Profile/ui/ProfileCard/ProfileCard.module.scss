@@ -8,7 +8,10 @@
 }
 
 .data {
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
 }
 
 .editBtn {
@@ -16,5 +19,21 @@
 }
 
 .input {
-    margin-top: 10px;
+    // margin-top: 10px;
+}
+
+.isLoading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.avatarWrap {
+    text-align: center;
+}
+
+.editing {
+    border: 2px solid var(--invert-primary-color)
 }

@@ -20,3 +20,17 @@ Primary.args = {
     placeholder: "enter text",
     value: "12322",
 };
+
+export const WithPrevText = Template.bind({});
+WithPrevText.args = {
+    placeholder: "enter text",
+    value: "12322",
+    prevText: "prev text",
+};
+
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
+    placeholder: "enter text",
+    value: "12322",
+    readonly: true,
+};

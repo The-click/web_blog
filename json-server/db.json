@@ -1,15 +1,33 @@
 {
-    "posts": [{ "id": "1", "title": "json-server", "author": "typicode" }],
-    "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
-    "profile": {
-        "first": "Тимур",
-        "lastname": "Ульби",
-        "app": 22,
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Moscow",
-        "username": "admin",
-        "avatar": "https://abrakadabra.fun/uploads/posts/2021-11/1637066880_1-abrakadabra-fun-p-ten-v-kapyushone-1.jpg"
-    },
-    "users": [{ "id": "1", "username": "admin", "password": "123" }]
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "first": "Тимур",
+    "lastname": "Ульби",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://cdn.vectorstock.com/i/1000x1000/65/71/hacker-laptop-icon-simple-style-vector-22606571.webp"
+  },
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ]
 }

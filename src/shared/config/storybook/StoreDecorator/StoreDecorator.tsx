@@ -1,4 +1,3 @@
-import { ReducersMapObject } from "@reduxjs/toolkit";
 import { Story } from "@storybook/react";
 import { StoreProvider } from "app/providers/StoreProvider";
 import { StateSchema } from "app/providers/StoreProvider/config/StateSchema";
@@ -19,8 +18,6 @@ export const StoreDecorator =
                 initialState={state}
                 asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
             >
-                <div>
-                    <StoryComponent />
-                </div>
+                <StoryComponent />
             </StoreProvider>
         );

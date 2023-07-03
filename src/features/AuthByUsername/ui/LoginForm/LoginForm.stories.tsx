@@ -9,9 +9,6 @@ import LoginForm from "./LoginForm";
 export default {
     title: "feauters/LoginForm",
     component: LoginForm,
-    argTypes: {
-        backgroundColor: { control: "color" },
-    },
 } as ComponentMeta<typeof LoginForm>;
 
 const Template: ComponentStory<typeof LoginForm> = (args) => (

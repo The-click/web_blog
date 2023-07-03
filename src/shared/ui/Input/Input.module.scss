@@ -1,6 +1,10 @@
 .inputWrapper {
     display: flex;
-    gap: 3px;
+    gap: 0 5px;
     align-items: center;
 
+}
+
+.readonly {
+    opacity: 0.7;
 }

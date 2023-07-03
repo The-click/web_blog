@@ -1,29 +1,31 @@
 {
-    "+": "",
-    "-": "",
-    "About": "",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
-        "\n                Voluptas sed maxime pariatur explicabo incidunt": {
-            " Amet, unde\n                inventore consequuntur numquam odit et blanditiis dolores\n                tempore enim nobis laboriosam! Corrupti, quia sequi": {
-                "": ""
-            }
-        }
-    },
-    "Main": "",
-    "Profile Page": "Profile Page",
-    "Toggle": "",
-    "error": "",
-    "hello": "hello",
-    "Введите username": "",
-    "Введите пароль": "",
-    "Войти": "",
-    "Вы ввели неправильный логин или пароль": "",
-    "Выйти": "",
-    "Обновть страницу": "",
-    "Ошибка": "",
-    "Перевод": "Перевод",
-    "Произошла непредвиденная ошибка": "",
-    "Страница не найдена": "",
-    "Форма авторизации": "",
-    "Profile": "Profile"
+  "+": "",
+  "-": "",
+  "About": "",
+  "Change country": "",
+  "Change currancy": "",
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
+    "\n                Voluptas sed maxime pariatur explicabo incidunt": {
+      " Amet, unde\n                inventore consequuntur numquam odit et blanditiis dolores\n                tempore enim nobis laboriosam! Corrupti, quia sequi": {
+        "": ""
+      }
+    }
+  },
+  "Main": "",
+  "Profile": "Profile",
+  "Profile Page": "Profile Page",
+  "Toggle": "",
+  "error": "",
+  "hello": "hello",
+  "Введите username": "",
+  "Введите пароль": "",
+  "Войти": "",
+  "Вы ввели неправильный логин или пароль": "",
+  "Выйти": "",
+  "Обновть страницу": "",
+  "Ошибка": "",
+  "Перевод": "Перевод",
+  "Произошла непредвиденная ошибка": "",
+  "Страница не найдена": "",
+  "Форма авторизации": ""
 }
