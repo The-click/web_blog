@@ -110,33 +110,33 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                     type="number"
                     min={0}
                     max={150}
-                    placeholder={t("Введите ваш возраст")}
+                    placeholder={t("Enter your age")}
                     className={cls.input}
-                    prevText={t("Ваш возраст")}
+                    prevText={t("Your age")}
                     readonly={readonly}
                 />
                 <Input
                     onChange={onChangeCity}
                     value={data?.city}
-                    placeholder={t("Введите ваш город")}
+                    placeholder={t("Enter your city")}
                     className={cls.input}
-                    prevText={t("Ваш город")}
+                    prevText={t("Your city")}
                     readonly={readonly}
                 />
                 <Input
                     onChange={onChangeUsername}
                     value={data?.username}
-                    placeholder={t("Введите имя пользователя")}
+                    placeholder={t("Enter your username")}
                     className={cls.input}
-                    prevText={t("Имя пользователя")}
+                    prevText={t("Your username")}
                     readonly={readonly}
                 />
                 <Input
                     onChange={onChangeAvatar}
                     value={data?.avatar}
-                    placeholder={t("Введите ссылку на аватар")}
+                    placeholder={t("Enter your link on avatar")}
                     className={cls.input}
-                    prevText={t("Ссылка на аватар")}
+                    prevText={t("Link on avatar")}
                     readonly={readonly}
                 />
                 <CurrencySelect

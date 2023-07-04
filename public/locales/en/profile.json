@@ -1,7 +1,6 @@
 {
     "Профиль": "Profile",
     "Profile": "Профиль",
-
     "Редактировать": "Edit",
     "Ваше имя": "Your name",
     "Ваша фамилия": "Your lastname",
@@ -10,5 +9,12 @@
     "Произошла ошибка при загрузке профиля": "Error during load profile",
     "Попробуйте обновить страницу": "Try refresh page",
     "Change currancy": "Change currancy",
-    "Change country": "Change country"
+    "Change country": "Change country",
+    "profile": {
+        "Server error": "Server error",
+        "Incorrect age": "Incorrect age",
+        "Incorrect country": "Incorrect country",
+        "Incorrect user firstnmae or lastname": "Incorrect user firstname or lastname",
+        "No data": "No data"
+    }
 }

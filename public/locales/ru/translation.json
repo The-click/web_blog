@@ -3,8 +3,16 @@
   "+": "+",
   "-": "-",
   "About": "О нас",
-  "Change country": "Change country",
-  "Change currancy": "Change currancy",
+  "Change country": "Выбрать страну",
+  "Change currancy": "Изменить валюту",
+  "Enter your age": "Enter your age",
+  "Enter your city": "Enter your city",
+  "Enter your link on avatar": "Enter your link on avatar",
+  "Enter your username": "Enter your username",
+  "Incorrect age": "Incorrect age",
+  "Incorrect country": "Incorrect country",
+  "Incorrect user firstnmae or lastname": "Incorrect user firstnmae or lastname",
+  "Link on avatar": "Link on avatar",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
     "\n                Voluptas sed maxime pariatur explicabo incidunt": {
       " Amet, unde\n                inventore consequuntur numquam odit et blanditiis dolores\n                tempore enim nobis laboriosam! Corrupti, quia sequi": {
@@ -13,9 +21,14 @@
     }
   },
   "Main": "Главная",
+  "No data": "No data",
   "Profile": "Профиль",
   "Profile Page": "Profile Page",
+  "Server error": "Server error",
   "Toggle": "Toggle",
+  "Your age": "Your age",
+  "Your city": "Your city",
+  "Your username": "Your username",
   "avatar user": "avatar user",
   "error": "error",
   "hello": "hello",
