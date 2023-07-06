@@ -5,7 +5,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
-import AvatarSrc from "shared/assets/icon/iconProfile.jpg";
+import { avatarImgSrc } from "shared/const/srcForImg";
 import { ProfileCard } from "./ProfileCard";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -26,7 +26,7 @@ const data = {
     country: Country.Russia,
     city: "Moscow",
     username: "admin",
-    avatar: AvatarSrc,
+    avatar: avatarImgSrc,
 };
 
 export const Primary = Template.bind({});

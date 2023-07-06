@@ -4,9 +4,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import AvatarSrc from "shared/assets/icon/iconProfile.jpg";
+// import AvatarSrc from "shared/assets/icon/iconProfile.jpg";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
+import { avatarImgSrc } from "shared/const/srcForImg";
 import ProfilePage from "./ProfilePage";
 
 export default {
@@ -29,7 +30,7 @@ const data = {
     country: Country.Russia,
     city: "Moscow",
     username: "admin",
-    avatar: AvatarSrc,
+    avatar: avatarImgSrc,
 };
 
 export const Light = Template.bind({});
