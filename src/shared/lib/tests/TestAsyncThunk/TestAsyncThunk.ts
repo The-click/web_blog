@@ -39,6 +39,7 @@ export class TestAsyncThunk<Return, Arg, RejectValue> {
             api: this.api,
             navigate: this.navigate,
         });
+
         return result;
     }
 }

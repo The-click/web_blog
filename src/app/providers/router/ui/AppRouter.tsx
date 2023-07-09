@@ -1,38 +1,39 @@
-import React, { Suspense, memo, useMemo } from "react";
+import React, { Suspense, memo, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 import { Route, Routes } from "react-router-dom";
 import { MainPage } from "pages/Main";
 import { AboutPage } from "pages/About";
-import { routeConfig } from "shared/config/routerConfig/routeConfig";
+import {
+    AppRouteProps,
+    routeConfig,
+} from "shared/config/routerConfig/routeConfig";
 import { PageLoader } from "widgets/PageLoader";
-import { useSelector } from "react-redux";
-import { getUserAuthData } from "entities/User";
+
+import { RequireAuth } from "./RequireAuth";
 
 const AppRouter = () => {
-    const isAuth = useSelector(getUserAuthData);
-
-    const routers = useMemo(
-        () =>
-            Object.values(routeConfig).filter((route) => {
-                if (route.authOnly && !isAuth) {
-                    return false;
+    const renderWithWrapper = useCallback((route: AppRouteProps) => {
+        const element = (
+            <Suspense fallback={<PageLoader />}>
+                <div className="page-wrapper">{route.element}</div>
+            </Suspense>
+        );
+        return (
+            <Route
+                key={route.path}
+                path={route.path}
+                element={
+                    route.authOnly ? (
+                        <RequireAuth>{element}</RequireAuth>
+                    ) : (
+                        element
+                    )
                 }
-                return true;
-            }),
-        [isAuth]
-    );
+            />
+        );
+    }, []);
 
-    return (
-        <Suspense fallback={<PageLoader />}>
-            <div className="page-wrapper">
-                <Routes>
-                    {routers.map(({ path, element }) => (
-                        <Route path={path} element={element} />
-                    ))}
-                </Routes>
-            </div>
-        </Suspense>
-    );
+    return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 };
 
 export default memo(AppRouter);
