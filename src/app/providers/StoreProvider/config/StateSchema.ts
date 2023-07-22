@@ -1,3 +1,4 @@
+import { ArticleDetailsCommentSchema } from "./../../../../pages/ArticleDetails/model/type/ArticleDetailsCommentSchema";
 import {
     AnyAction,
     CombinedState,
@@ -21,6 +22,7 @@ export interface StateSchema {
     login?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articleDetailsComments?: ArticleDetailsCommentSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

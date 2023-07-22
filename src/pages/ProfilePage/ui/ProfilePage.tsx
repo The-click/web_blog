@@ -25,6 +25,7 @@ import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import cls from "./ProfilePage.module.scss";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -55,12 +56,9 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         [ValidateProfileError.NO_DATA]: t("No data"),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch]);
-
+    useInitialEffect(() => {
+        dispatch(fetchProfileData());
+    });
     const onChangeFirstName = useCallback(
         (value?: string) => {
             dispatch(profileActions.updateProfile({ first: value || "" }));

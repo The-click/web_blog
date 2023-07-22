@@ -117,13 +117,15 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "role": "ADMIN"
+            "role": "ADMIN",
+            "avatar": "https://cdn.vectorstock.com/i/1000x1000/65/71/hacker-laptop-icon-simple-style-vector-22606571.webp"
         },
         {
             "id": "2",
             "username": "user",
             "password": "123",
-            "role": "USER"
+            "role": "USER",
+            "avatar": "https://www.soscanhelp.com/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
         }
     ]
 }

@@ -2,7 +2,9 @@
   "Article page": "Article page",
   "Article Details": "Article Details",
   "article": {
-    "Article is not found": "Article is not found"
+    "Article is not found": "Article is not found",
+    "Comment": "Comment",
+    "Comments": "Comments"
   },
   "Error while load article": "Error while load article"
 }

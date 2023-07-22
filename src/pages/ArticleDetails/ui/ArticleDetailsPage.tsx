@@ -3,16 +3,44 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { ArticleDetails } from "entities/Article";
+import { Text } from "shared/ui/Text/Text";
+import { CommentList } from "entities/Comment";
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useDispatch, useSelector } from "react-redux";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import {
+    articleDetailsCommentReducer,
+    getArticleComments,
+} from "../model/slice/articleDetailsCommentSlice";
 import cls from "./ArticleDetailsPage.module.scss";
+import {
+    getArticleCommentsError,
+    getArticleCommentsIsLoading,
+} from "../model/selectors/comments/comments";
+import { fetchCommentArticleById } from "../model/service/fetchCommentArticleById";
 
 interface ArticleDetailsProps {
     className?: string;
 }
-
+const reducers: ReducersList = {
+    articleDetailsComments: articleDetailsCommentReducer,
+};
 const ArticleDetailsPage = (props: ArticleDetailsProps) => {
     const { className } = props;
     const { t } = useTranslation("article");
     const { id } = useParams<{ id: string }>();
+
+    const dispatch = useDispatch();
+
+    const comments = useSelector(getArticleComments.selectAll);
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+
+    useInitialEffect(() => {
+        dispatch(fetchCommentArticleById(id));
+    });
 
     if (!id) {
         return (
@@ -24,9 +52,18 @@ const ArticleDetailsPage = (props: ArticleDetailsProps) => {
         );
     }
     return (
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-            <ArticleDetails id={id} />
-        </div>
+        <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+            <div
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
+                <ArticleDetails id={id} />
+                <Text className={cls.commentTitle} title={t("Comments")} />
+                <CommentList
+                    comments={comments}
+                    isLoading={commentsIsLoading}
+                />
+            </div>
+        </DynamicModuleLoader>
     );
 };
 
