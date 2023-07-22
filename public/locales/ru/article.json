@@ -1,8 +1,11 @@
 {
   "Article page": "Страница статьи",
   "Article Details": "Статья Подробнее",
+  "Article is not found": "Статья не найдена",
+  "Comments": "Комментарии",
+  "Comments empty": "Комментарии пусты",
+  "Error while load article": "Ошибка при загрузке статьи",
   "article": {
-    "Article is not found": "Статья не найдена"
-  },
-  "Error while load article": "Ошибка при загрузке статьи"
+    "Comments": "Комментарии"
+  }
 }
