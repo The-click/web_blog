@@ -13,6 +13,7 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import EyeIcon from "shared/assets/icon/ant-design_eye-outlined.svg";
 import CalendarIcon from "shared/assets/icon/clarity_date-line.svg";
 import { Icon } from "shared/ui/Icon/Icon";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { ArticleBlock, ArticleBlockType } from "../../model/type/article";
 import { fetchArticleById } from "../../model/service/fetchArticleById";
 import cls from "./ArticleDetails.module.scss";
@@ -25,7 +26,6 @@ import {
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 interface ArticleDetailsProps {
     className?: string;

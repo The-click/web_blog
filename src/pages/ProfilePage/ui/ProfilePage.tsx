@@ -23,9 +23,10 @@ import { useSelector } from "react-redux";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 import cls from "./ProfilePage.module.scss";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -39,6 +40,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
     const { className } = props;
     const { t } = useTranslation("profile");
     const dispatch = useAppDispatch();
+    const { id } = useParams<{ id: string }>();
 
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
@@ -57,7 +59,9 @@ const ProfilePage = memo((props: ProfilePageProps) => {
     };
 
     useInitialEffect(() => {
-        dispatch(fetchProfileData());
+        if (id) {
+            dispatch(fetchProfileData(id));
+        }
     });
     const onChangeFirstName = useCallback(
         (value?: string) => {

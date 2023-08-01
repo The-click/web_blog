@@ -4,6 +4,8 @@
   "About": "",
   "Change country": "",
   "Change currancy": "",
+  "Comments empty": "",
+  "Enter your comment": "",
   "Error while load article": "",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
     "\n                Voluptas sed maxime pariatur explicabo incidunt": {
@@ -15,6 +17,7 @@
   "Main": "",
   "Profile": "Profile",
   "Profile Page": "Profile Page",
+  "Send": "",
   "Toggle": "",
   "error": "",
   "hello": "hello",

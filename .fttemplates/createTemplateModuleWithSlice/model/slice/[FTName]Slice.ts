@@ -1,9 +1,9 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState:<FTName>Schema = {
-    isLoading:undefined;
-    error:undefined;
-    data:undefined;
+    isLoading:undefined,
+    error:undefined,
+    data:undefined,
    
 };
 
