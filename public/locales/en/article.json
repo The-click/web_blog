@@ -4,7 +4,9 @@
   "article": {
     "Article is not found": "Article is not found",
     "Comment": "Comment",
-    "Comments": "Comments"
+    "Comments": "Comments",
+    "Back to list": "Back to list"
   },
-  "Error while load article": "Error while load article"
+  "Error while load article": "Error while load article",
+  "Read more": "Read more"
 }
