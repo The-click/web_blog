@@ -14,6 +14,8 @@ import {
 import { useSelector } from "react-redux";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Page } from "shared/ui/Page/Page";
+import { Text, TextTheme } from "shared/ui/Text/Text";
 import {
     articlePageActions,
     articlePageReducer,
@@ -24,8 +26,11 @@ import cls from "./ArticlePage.module.scss";
 import {
     getArticlesError,
     getArticlesIsLoading,
+    getArticlesPageHasMore,
+    getArticlesPageNum,
     getArticlesViews,
 } from "../model/selectors/articlePageSelectors";
+import { fetchNextArticlePage } from "../model/service/fetchNextArticlePage/fetchNextArticlePage";
 
 interface ArticlePageProps {
     className?: string;
@@ -44,9 +49,13 @@ const ArticlePage = (props: ArticlePageProps) => {
     const error = useSelector(getArticlesError);
     const view = useSelector(getArticlesViews);
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlePage());
+    }, [dispatch]);
+
     useInitialEffect(() => {
-        dispatch(fetchArticleList());
         dispatch(articlePageActions.initState());
+        dispatch(fetchArticleList({ page: 1 }));
     });
 
     const onChangeView = useCallback(
@@ -58,14 +67,23 @@ const ArticlePage = (props: ArticlePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducer}>
-            <div className={classNames(cls.ArticlePage, {}, [className])}>
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls.ArticlePage, {}, [className])}
+            >
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
                 <ArticleList
                     articles={articles}
                     view={view}
                     isLoading={isLoading}
                 />
-            </div>
+                {error && (
+                    <Text
+                        title={t("Failed to upload articles")}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
+            </Page>
         </DynamicModuleLoader>
     );
 };

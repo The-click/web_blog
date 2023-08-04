@@ -3,6 +3,7 @@ import { Counter } from "entities/Counter";
 import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Input } from "shared/ui/Input/Input";
+import { Page } from "shared/ui/Page/Page";
 
 interface MainPageProps {}
 const MainPage = memo((props: MainPageProps) => {
@@ -15,12 +16,12 @@ const MainPage = memo((props: MainPageProps) => {
     };
 
     return (
-        <div>
+        <Page>
             <BugButton />
             {t("Главная")}
 
             {/* <Counter /> */}
-        </div>
+        </Page>
     );
 });
 

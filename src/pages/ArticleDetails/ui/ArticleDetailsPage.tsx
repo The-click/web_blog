@@ -14,6 +14,7 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from "features/AddCommentForm";
 import { Button, ThemeButton } from "shared/ui/Button/Button";
 import { RoutePath } from "shared/config/routerConfig/routeConfig";
+import { Page } from "shared/ui/Page/Page";
 import {
     articleDetailsCommentReducer,
     getArticleComments,
@@ -69,7 +70,7 @@ const ArticleDetailsPage = (props: ArticleDetailsProps) => {
     }
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <div
+            <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
                 <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
@@ -82,7 +83,7 @@ const ArticleDetailsPage = (props: ArticleDetailsProps) => {
                     comments={comments}
                     isLoading={commentsIsLoading}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
