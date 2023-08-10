@@ -4,7 +4,7 @@ import { ArticleViewSelector } from "./ArticleViewSelector";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "shared/ArticleViewSelector",
+    title: "entities/article/ArticleViewSelector",
     component: ArticleViewSelector,
     argTypes: {
         backgroundColor: { control: "color" },

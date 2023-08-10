@@ -19,7 +19,7 @@ describe("fetchNextArticlePage.test", () => {
         const result = await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticleList).toBeCalledWith({ page: 3 });
+        expect(fetchArticleList).toBeCalledWith({});
         expect(result.meta.requestStatus).toBe("fulfilled");
     });
 

@@ -21,12 +21,16 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const store = useStore() as ReduxStoreWithManager;
 
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getMountedReducers();
         Object.entries(reducers).forEach(([nameStateSchema, reducer]) => {
-            store.reducerManager.add(
-                nameStateSchema as StateSchemaKey,
-                reducer
-            );
-            dispatch({ type: `@Init ${nameStateSchema} reducer` });
+            const mounted = mountedReducers[nameStateSchema as StateSchemaKey];
+            if (!mounted) {
+                store.reducerManager.add(
+                    nameStateSchema as StateSchemaKey,
+                    reducer
+                );
+                dispatch({ type: `@Init ${nameStateSchema} reducer` });
+            }
         });
 
         return () => {

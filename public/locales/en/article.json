@@ -1,13 +1,26 @@
 {
   "Article page": "Article page",
   "Article Details": "Article Details",
-  "article": {
-    "Article is not found": "Article is not found",
-    "Comment": "Comment",
-    "Comments": "Comments",
-    "Back to list": "Back to list",
-    "Failed to upload articles": "Failed to upload articles"
-  },
+  "Article is not found": "Article is not found",
+  "Comment": "Comment",
+  "Comments": "Comments",
+  "Back to list": "Back to list",
+  "Failed to upload articles": "Failed to upload articles",
+  "Sort by": "Sort by",
   "Error while load article": "Error while load article",
-  "Read more": "Read more"
+  "Read more": "Read more",
+  "Search": "Search",
+  "By": "By",
+  "Ascending": "Ascending",
+  "Descending": "Descending",
+  "Date": "Date",
+  "Title": "Title",
+  "Views": "Views",
+  "article": {
+    "Economic": "Economic",
+    "All": "All",
+    "IT": "IT",
+    "Science": "Science",
+    "Articles is not find": "Articles is not find"
+  }
 }

@@ -2,7 +2,6 @@ import React, { memo, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import {
-    Article,
     ArticleList,
     ArticleView,
     ArticleViewSelector,
@@ -16,21 +15,21 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Page } from "shared/ui/Page/Page";
 import { Text, TextTheme } from "shared/ui/Text/Text";
+import { useSearchParams } from "react-router-dom";
 import {
     articlePageActions,
     articlePageReducer,
     getArticles,
 } from "../model/slice/articlePageSlice";
-import { fetchArticleList } from "../model/service/fetchArticleList/fetchArticleList";
 import cls from "./ArticlePage.module.scss";
 import {
     getArticlesError,
     getArticlesIsLoading,
-    getArticlesPageHasMore,
-    getArticlesPageNum,
     getArticlesViews,
 } from "../model/selectors/articlePageSelectors";
 import { fetchNextArticlePage } from "../model/service/fetchNextArticlePage/fetchNextArticlePage";
+import { initArticlePage } from "../model/service/initArticlePage/initArticlePage";
+import { ArticlesPageFilters } from "./ArticlesPageFilters/ArticlesPageFilters";
 
 interface ArticlePageProps {
     className?: string;
@@ -48,34 +47,28 @@ const ArticlePage = (props: ArticlePageProps) => {
     const isLoading = useSelector(getArticlesIsLoading);
     const error = useSelector(getArticlesError);
     const view = useSelector(getArticlesViews);
+    const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage());
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlePageActions.initState());
-        dispatch(fetchArticleList({ page: 1 }));
+        dispatch(initArticlePage(searchParams));
     });
 
-    const onChangeView = useCallback(
-        (view: ArticleView) => {
-            dispatch(articlePageActions.setView(view));
-        },
-        [dispatch]
-    );
-
     return (
-        <DynamicModuleLoader reducers={reducer}>
+        <DynamicModuleLoader reducers={reducer} removeAfterUnmount={false}>
             <Page
-                onScrollEnd={onLoadNextPart}
+                onScrollEnd={!isLoading ? onLoadNextPart : undefined}
                 className={classNames(cls.ArticlePage, {}, [className])}
             >
-                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticlesPageFilters />
                 <ArticleList
                     articles={articles}
                     view={view}
                     isLoading={isLoading}
+                    className={cls.list}
                 />
                 {error && (
                     <Text

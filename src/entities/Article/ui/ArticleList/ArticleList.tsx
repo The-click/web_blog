@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
+import { Text } from "shared/ui/Text/Text";
 import cls from "./ArticleList.module.scss";
 import { Article, ArticleView } from "../../model/type/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
@@ -36,6 +37,19 @@ export const ArticleList = memo((props: ArticleListProps) => {
             className={cls.card}
         />
     );
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div
+                className={classNames(cls.articleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
+                <Text title={t("Articles is not find")} />
+            </div>
+        );
+    }
 
     return (
         <div

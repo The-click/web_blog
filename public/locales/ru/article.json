@@ -7,7 +7,20 @@
   "Error while load article": "Ошибка при загрузке статьи",
   "Back to list": "Обратно к списку",
   "Read more": "Читать далее",
+  "Failed to upload articles": "Ошибка загрузки статей",
+  "Sort by": "Сортировать по",
+  "Search": "Поиск",
+  "By": "По",
+  "Ascending": "возрастанию",
+  "Descending": "убыванию",
+  "Date": "Дате",
+  "Title": "Заголовоку",
+  "Views": "Просмотрам",
   "article": {
-    "Failed to upload articles": ""
+    "Economic": "",
+    "All": "",
+    "IT": "ЭТО",
+    "Science": "",
+    "Articles is not find": ""
   }
 }

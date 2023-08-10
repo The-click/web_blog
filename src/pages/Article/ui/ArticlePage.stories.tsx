@@ -1,10 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import ArticlePage from "./ArticlePage";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "entities/ArticlePage",
+    title: "pages/article/ArticlePage",
     component: ArticlePage,
     argTypes: {
         backgroundColor: { control: "color" },
@@ -17,3 +18,4 @@ const Template: ComponentStory<typeof ArticlePage> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [StoreDecorator({})];
