@@ -15,7 +15,7 @@ import { SortOrder } from "shared/types";
 import { ArticlePageSchema } from "../type/articlePageSchema";
 import { fetchArticleList } from "../service/fetchArticleList/fetchArticleList";
 
-const articleAdapter = createEntityAdapter<Article>({
+export const articleAdapter = createEntityAdapter<Article>({
     selectId: (comment) => comment.id,
 });
 
@@ -82,7 +82,6 @@ const articlePageSlice = createSlice({
                 state.isLoading = false;
 
                 state.hasMore = action.payload.length >= state.limit;
-
                 if (action.meta.arg.replace) {
                     articleAdapter.setAll(state, action.payload);
                 } else {
