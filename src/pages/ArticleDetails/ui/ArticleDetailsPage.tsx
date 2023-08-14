@@ -26,19 +26,16 @@ import {
 } from "../model/selectors/comments/comments";
 import { fetchCommentArticleById } from "../model/service/fetchCommentArticleById";
 import { addCommentForArticle } from "../model/service/addCommentForArticle/addCommentForArticle";
-import {
-    articleDetailsPageRecommendationsReducer,
-    getArticleRecommendations,
-} from "../model/slice/articleDetailsPageRecommendationsSlice";
+import { getArticleRecommendations } from "../model/slice/articleDetailsPageRecommendationsSlice";
 import { getArticleRecommendationIsLoading } from "../model/selectors/comments/recommendation";
 import { fetchArticleRecommendation } from "../model/service/fetchArticleRecommendation/fetchArticleRecommendation";
+import { articleDetailsPageReducer } from "../model/slice";
 
 interface ArticleDetailsProps {
     className?: string;
 }
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentReducer,
-    articleDetailsPageRecommendations: articleDetailsPageRecommendationsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 const ArticleDetailsPage = (props: ArticleDetailsProps) => {
     const { className } = props;
@@ -99,6 +96,7 @@ const ArticleDetailsPage = (props: ArticleDetailsProps) => {
                     view={ArticleView.SMALL}
                     articles={recommendation}
                     className={cls.recommendation}
+                    target="_blank"
                 />
                 <Text
                     size={TextSize.L}
