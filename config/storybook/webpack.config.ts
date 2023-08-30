@@ -1,7 +1,7 @@
-import webpack, { DefinePlugin } from "webpack";
 import path from "path";
-import { BuildPaths } from "../type/config";
+import webpack, { DefinePlugin } from "webpack";
 import { buildCssLoader } from "../build/loaders/buildCssLoaders";
+import { BuildPaths } from "../type/config";
 
 export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
@@ -9,6 +9,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
         entry: "",
         output: "",
         src: path.resolve(__dirname, "..", "..", "src"),
+        locales: path.resolve(__dirname, "public", "locales"),
+        buildLocales: path.resolve(__dirname, "dist", "locales"),
     };
 
     // config!.resolve!.modules!.push(paths.src);
