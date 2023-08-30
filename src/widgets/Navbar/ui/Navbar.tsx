@@ -1,15 +1,13 @@
+import { getUserAuthData, userActions } from "entities/User";
 import { LoginModal } from "features/AuthByUsername";
-import { memo, useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RoutePath } from "shared/config/routerConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, AppLinkThem } from "shared/ui/AppLink/AppLink";
 import { Button, ThemeButton } from "shared/ui/Button/Button";
-import { Modal } from "shared/ui/Modal/Modal";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserAuthData, userActions } from "entities/User";
-import { StateSchema } from "app/providers/StoreProvider";
+import { Text, TextTheme } from "shared/ui/Text/Text";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -36,6 +34,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (auhtData) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
+                <Text
+                    className={cls.appName}
+                    title={t("Blog app")}
+                    theme={TextTheme.INVERTED}
+                />
+                <AppLink
+                    to={RoutePath.article_create}
+                    theme={AppLinkThem.SECONDARY}
+                    className={cls.createLink}
+                >
+                    {t("Create article")}
+                </AppLink>
                 <div className={cls.links}>
                     <Button
                         onClick={onLogout}
