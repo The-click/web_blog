@@ -24,6 +24,7 @@ module.exports = {
     'prettier',
     'i18next',
     "react-hooks",
+    "local-plugin"
   ],
   rules: {
     'prettier/prettier': 'off',
@@ -46,7 +47,8 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error",
     'no-param-reassign': 'off',
     'no-undef': 'off',
-    'react/no-array-index-key': 'off'
+    'react/no-array-index-key': 'off',
+    'local-plugin/path-checker': 'error'
   },
   globals: {
     '__IS_DEV__': true,

@@ -1,27 +1,17 @@
-import React, { memo, useCallback } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { ArticleList } from "entities/Article";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import {
-    ArticleList,
-    ArticleView,
-    ArticleViewSelector,
-} from "entities/Article";
+import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+import { classNames } from "shared/lib/classNames/classNames";
 import {
     DynamicModuleLoader,
     ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useSelector } from "react-redux";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Page } from "shared/ui/Page/Page";
 import { Text, TextTheme } from "shared/ui/Text/Text";
-import { useSearchParams } from "react-router-dom";
-import {
-    articlePageActions,
-    articlePageReducer,
-    getArticles,
-} from "../model/slice/articlePageSlice";
-import cls from "./ArticlePage.module.scss";
 import {
     getArticlesError,
     getArticlesIsLoading,
@@ -29,6 +19,11 @@ import {
 } from "../model/selectors/articlePageSelectors";
 import { fetchNextArticlePage } from "../model/service/fetchNextArticlePage/fetchNextArticlePage";
 import { initArticlePage } from "../model/service/initArticlePage/initArticlePage";
+import {
+    articlePageReducer,
+    getArticles,
+} from "../model/slice/articlePageSlice";
+import cls from "./ArticlePage.module.scss";
 import { ArticlesPageFilters } from "./ArticlesPageFilters/ArticlesPageFilters";
 
 interface ArticlePageProps {
