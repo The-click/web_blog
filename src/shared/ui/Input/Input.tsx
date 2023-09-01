@@ -1,6 +1,6 @@
-import { type } from "os";
 import React, { InputHTMLAttributes, memo } from "react";
 import { Mods, classNames } from "shared/lib/classNames/classNames";
+import { HStack } from "../Stack";
 import cls from "./Input.module.scss";
 
 type HTMLInputProps = Omit<
@@ -39,7 +39,11 @@ export const Input = memo((props: InputProps) => {
     };
 
     return (
-        <div className={classNames(cls.inputWrapper, {}, [])}>
+        <HStack
+            max
+            justify="center"
+            className={classNames(cls.inputWrapper, {}, [])}
+        >
             {prevText && <span className={cls.prevText}>{prevText}</span>}
             <input
                 readOnly={readonly}
@@ -50,6 +54,6 @@ export const Input = memo((props: InputProps) => {
                 placeholder={placeholder}
                 {...otherProps}
             />
-        </div>
+        </HStack>
     );
 });

@@ -1,13 +1,14 @@
-import React, { memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Text } from "shared/ui/Text/Text";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { AppLink } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routerConfig/routeConfig";
-import cls from "./CommentCard.module.scss";
+import { classNames } from "shared/lib/classNames/classNames";
+import { AppLink } from "shared/ui/AppLink/AppLink";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { VStack } from "shared/ui/Stack";
+import { Text } from "shared/ui/Text/Text";
 import { Comment } from "../../model/type/comment";
+import cls from "./CommentCard.module.scss";
 
 interface CommentCardProps {
     className?: string;
@@ -44,7 +45,11 @@ export const CommentCard = memo((props: CommentCardProps) => {
         return null;
     }
     return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
+        <VStack
+            gap="8"
+            max
+            className={classNames(cls.CommentCard, {}, [className])}
+        >
             <AppLink
                 to={RoutePath.profile + comment.user.id}
                 className={cls.header}
@@ -55,6 +60,6 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 <Text title={comment.user.username} className={cls.username} />
             </AppLink>
             <Text text={comment.text} className={cls.text} />
-        </div>
+        </VStack>
     );
 });

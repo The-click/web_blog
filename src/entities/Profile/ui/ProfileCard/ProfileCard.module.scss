@@ -3,36 +3,14 @@
     border: 2px solid var(--invert-bg-color)
 }
 
-.header {
-    display: flex;
-}
 
-.data {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-}
-
-.editBtn {
-    margin-left: auto;
-}
-
-.input {
-    // margin-top: 10px;
-}
 
 .isLoading,
 .error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 300px;
 }
 
-.avatarWrap {
-    text-align: center;
-}
+
 
 .editing {
     border: 2px solid var(--invert-primary-color)

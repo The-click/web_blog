@@ -601,6 +601,18 @@
       "text": "commenet",
       "userId": "1",
       "id": "8bRYf0D"
+    },
+    {
+      "articleId": "7",
+      "text": "Comment",
+      "userId": "1",
+      "id": "RXNq5If"
+    },
+    {
+      "articleId": "7",
+      "text": "new comment",
+      "userId": "1",
+      "id": "8EdEB9r"
     }
   ],
   "users": [
