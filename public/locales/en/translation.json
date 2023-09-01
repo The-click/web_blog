@@ -51,6 +51,8 @@
   "Recommendations": "Recommendations",
   "Science": "Science",
   "Search": "Search",
+  "Select country": "Select country",
+  "Select currancy": "Select currancy",
   "Send": "Send",
   "Server error": "Server error",
   "Sort by": "Sort by",
@@ -94,5 +96,6 @@
   "Ссылка на аватар": "Ссылка на аватар",
   "Статьи не найдены": "Статьи не найдены",
   "Страница не найдена": "Page not found",
+  "Укажите валюту": "Укажите валюту",
   "Форма авторизации": "Form auth"
 }

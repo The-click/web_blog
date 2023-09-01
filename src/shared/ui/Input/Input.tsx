@@ -41,7 +41,8 @@ export const Input = memo((props: InputProps) => {
     return (
         <HStack
             max
-            justify="center"
+            gap="8"
+            justify="start"
             className={classNames(cls.inputWrapper, {}, [])}
         >
             {prevText && <span className={cls.prevText}>{prevText}</span>}

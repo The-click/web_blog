@@ -1,5 +1,4 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Theme } from "app/providers/ThemeProvider";
 
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
@@ -63,4 +62,18 @@ SizeL.args = {
     title: "Title",
     text: "Text Text TextTextText",
     size: TextSize.L,
+};
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+    title: "Title",
+    text: "Text Text TextTextText",
+    size: TextSize.M,
+};
+
+export const SizeS = Template.bind({});
+SizeS.args = {
+    title: "Title",
+    text: "Text Text TextTextText",
+    size: TextSize.S,
 };

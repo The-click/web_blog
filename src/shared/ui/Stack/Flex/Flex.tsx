@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Flex.module.scss";
 
@@ -31,7 +31,12 @@ const gapClasses: Record<FlexGap, string> = {
     32: cls.gap32,
 };
 
-export interface FlexProps {
+type HTMLDivElementProps = DetailedHTMLProps<
+    HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
+
+export interface FlexProps extends HTMLDivElementProps {
     className?: string;
     children: ReactNode;
     justify?: FlexJustify;

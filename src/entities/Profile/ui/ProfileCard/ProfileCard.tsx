@@ -89,6 +89,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
     return (
         <VStack
             gap="8"
+            justify="start"
             max
             className={classNames(cls.profileCard, mods, [className])}
         >
