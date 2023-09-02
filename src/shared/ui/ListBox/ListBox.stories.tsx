@@ -11,6 +11,13 @@ export default {
     argTypes: {
         backgroundColor: { control: "color" },
     },
+    decorators: [
+        (Story) => (
+            <div style={{ padding: 100 }}>
+                <Story />
+            </div>
+        ),
+    ],
 } as ComponentMeta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (args) => (
@@ -50,28 +57,37 @@ ReadOnly.args = {
     readonly: true,
 };
 
-export const DirectionTop = TemplateWrap.bind({});
-DirectionTop.args = {
-    direction: "column",
-    align: "start",
-    justify: "between",
-    max: true,
-    gap: "32",
-    children: (
-        <>
-            <div>Text</div>
-            <div>Text</div>
-            <div>Text</div>
-            <div>Text</div>
-            <div>Text</div>
-            <div>Text</div>
-            <ListBox
-                items={people}
-                onChange={(value: string) => {}}
-                value={people[0].content}
-                defaultValue={"Select people"}
-                direction={"top"}
-            />
-        </>
-    ),
+export const DirectionTopLeft = Template.bind({});
+DirectionTopLeft.args = {
+    items: people,
+    onChange: (value: string) => {},
+    value: people[0].content,
+    defaultValue: "Select people",
+    direction: "top left",
+};
+
+export const DirectionTopRight = Template.bind({});
+DirectionTopRight.args = {
+    items: people,
+    onChange: (value: string) => {},
+    value: people[0].content,
+    defaultValue: "Select people",
+    direction: "top right",
+};
+
+export const DirectionBottomLeft = Template.bind({});
+DirectionBottomLeft.args = {
+    items: people,
+    onChange: (value: string) => {},
+    value: people[0].content,
+    defaultValue: "Select people",
+    direction: "bottom left",
+};
+export const DirectionBottomRight = Template.bind({});
+DirectionBottomRight.args = {
+    items: people,
+    onChange: (value: string) => {},
+    value: people[0].content,
+    defaultValue: "Select people",
+    direction: "bottom right",
 };
