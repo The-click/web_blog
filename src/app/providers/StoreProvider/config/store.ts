@@ -4,12 +4,13 @@ import {
     Reducer,
     ReducersMapObject,
 } from "@reduxjs/toolkit";
-import { CounterReducer } from "entities/Counter";
+
 import { userReducer } from "entities/User";
-import { $api } from "shared/api/api";
 import { scrollSaveReducer } from "features/ScrollSave";
-import { StateSchema, ThunkExtraArg } from "./StateSchema";
+import { $api } from "shared/api/api";
+import { rtkApi } from "shared/api/rtkApi";
 import { createReducerManager } from "./reduceManager";
+import { StateSchema, ThunkExtraArg } from "./StateSchema";
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -17,9 +18,10 @@ export function createReduxStore(
 ) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
-        counter: CounterReducer,
+
         user: userReducer,
         scroll: scrollSaveReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reduceManager = createReducerManager(rootReducers);
@@ -36,7 +38,7 @@ export function createReduxStore(
                 thunk: {
                     extraArgument: extraArg,
                 },
-            }),
+            }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore

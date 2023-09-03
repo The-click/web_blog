@@ -1,4 +1,3 @@
-import { ArticleList } from "entities/Article";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -11,18 +10,11 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Page } from "shared/ui/Page/Page";
-import { Text, TextTheme } from "shared/ui/Text/Text";
-import {
-    getArticlesError,
-    getArticlesIsLoading,
-    getArticlesViews,
-} from "../model/selectors/articlePageSelectors";
+import { getArticlesIsLoading } from "../model/selectors/articlePageSelectors";
 import { fetchNextArticlePage } from "../model/service/fetchNextArticlePage/fetchNextArticlePage";
 import { initArticlePage } from "../model/service/initArticlePage/initArticlePage";
-import {
-    articlePageReducer,
-    getArticles,
-} from "../model/slice/articlePageSlice";
+import { articlePageReducer } from "../model/slice/articlePageSlice";
+import { ArticleInfiniteList } from "./ArticleInfiniteList/ArticleInfiniteList";
 import cls from "./ArticlePage.module.scss";
 import { ArticlesPageFilters } from "./ArticlesPageFilters/ArticlesPageFilters";
 
@@ -38,10 +30,7 @@ const ArticlePage = (props: ArticlePageProps) => {
     const { className } = props;
     const { t } = useTranslation("article");
     const dispatch = useAppDispatch();
-    const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesIsLoading);
-    const error = useSelector(getArticlesError);
-    const view = useSelector(getArticlesViews);
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
@@ -59,18 +48,7 @@ const ArticlePage = (props: ArticlePageProps) => {
                 className={classNames(cls.ArticlePage, {}, [className])}
             >
                 <ArticlesPageFilters />
-                <ArticleList
-                    articles={articles}
-                    view={view}
-                    isLoading={isLoading}
-                    className={cls.list}
-                />
-                {error && (
-                    <Text
-                        title={t("Failed to upload articles")}
-                        theme={TextTheme.ERROR}
-                    />
-                )}
+                <ArticleInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
     );

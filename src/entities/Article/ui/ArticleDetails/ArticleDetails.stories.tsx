@@ -1,5 +1,4 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import {
     Article,
@@ -10,7 +9,7 @@ import { ArticleDetails } from "./ArticleDetails";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "entities/ArticleDetails",
+    title: "entities/article/ArticleDetails",
     component: ArticleDetails,
     argTypes: {
         backgroundColor: { control: "color" },

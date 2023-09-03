@@ -1,16 +1,15 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import {
     Article,
     ArticleBlockType,
     ArticleType,
 } from "entities/Article/model/type/article";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import ArticleDetailsPage from "./ArticleDetailsPage";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "pages/article/ArticleDetailsPage",
+    title: "pages/articleDetails/ArticleDetailsPage",
     component: ArticleDetailsPage,
     argTypes: {
         backgroundColor: { control: "color" },

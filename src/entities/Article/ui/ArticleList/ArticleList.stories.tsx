@@ -1,11 +1,10 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ArticleList } from "./ArticleList";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Article, ArticleView } from "../../model/type/article";
+import { ArticleList } from "./ArticleList";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "entities/Article/ArticleList",
+    title: "entities/article/ArticleList",
     component: ArticleList,
     argTypes: {
         backgroundColor: { control: "color" },
