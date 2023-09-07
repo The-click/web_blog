@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, ReactNode, memo } from "react";
+import { ButtonHTMLAttributes, ReactNode, memo } from "react";
 import { Mods, classNames } from "shared/lib/classNames/classNames";
 import cls from "./Button.module.scss";
 
@@ -35,6 +35,7 @@ export const Button = memo((props: ButtonProps) => {
         square,
         size = SizeButton.M,
         disabled,
+
         ...otherProps
     } = props;
 

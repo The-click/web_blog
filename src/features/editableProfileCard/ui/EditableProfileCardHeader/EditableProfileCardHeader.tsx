@@ -52,7 +52,11 @@ export const EditableProfileCardHeader: React.FC<
             {canEdit && (
                 <div>
                     {readonly ? (
-                        <Button theme={ThemeButton.OUTLINE} onClick={onEdit}>
+                        <Button
+                            theme={ThemeButton.OUTLINE}
+                            data-testid={"EditableProfileCardHeader.EditButton"}
+                            onClick={onEdit}
+                        >
                             {t("Редактировать")}
                         </Button>
                     ) : (
@@ -60,12 +64,18 @@ export const EditableProfileCardHeader: React.FC<
                             <Button
                                 theme={ThemeButton.OUTLINE_RED}
                                 onClick={onCancelEdit}
+                                data-testid={
+                                    "EditableProfileCardHeader.CancelButton"
+                                }
                             >
                                 {t("Отменить")}
                             </Button>
                             <Button
                                 theme={ThemeButton.OUTLINE}
                                 onClick={onSaveEdit}
+                                data-testid={
+                                    "EditableProfileCardHeader.SaveButton"
+                                }
                             >
                                 {t("Сохранить")}
                             </Button>

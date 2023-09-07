@@ -11,7 +11,7 @@ import { Loader } from "../../../../shared/ui/Loader/Loader";
 import { Profile } from "../../model/types/profile";
 import cls from "./ProfileCard.module.scss";
 
-import AvatarImg from "./iconProfile.jpg";
+// import AvatarImg from "./iconProfile.jpg";
 
 interface ProfileCardProps {
     className?: string;
@@ -95,7 +95,12 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
         >
             {data?.avatar && (
                 <HStack justify="center" max className={cls.avatarWrap}>
-                    <Avatar src={AvatarImg} alt={t("avatar user")} />
+                    <Avatar
+                        src={
+                            "https://store.playstation.com/store/api/chihiro/00_09_000/container/RU/ru/19/EP4396-CUSA10659_00-AV00000000000112/image?w=320&h=320&bg_color=000000&opacity=100&_version=00_09_000"
+                        }
+                        alt={t("avatar user")}
+                    />
                 </HStack>
             )}
             <Input
@@ -105,6 +110,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                 prevText={t("Ваше имя")}
                 onChange={onChangeFirstName}
                 readonly={readonly}
+                data-testid={"ProfileCard.firstname"}
             />
             <Input
                 onChange={onChangeLastName}
@@ -113,6 +119,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                 className={cls.input}
                 prevText={t("Ваша фамилия")}
                 readonly={readonly}
+                data-testid={"ProfileCard.lastname"}
             />
             <Input
                 onChange={onChangeAge}
