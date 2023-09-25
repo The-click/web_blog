@@ -14,7 +14,7 @@
 .menu {
     background: var(--card-bg);
     position: absolute;
-    z-index: 100000;
+    z-index: var(--box-z-index);
     border-radius: 8px;
     border: 1px solid var(--primary-color);
     display: flex;

@@ -14,13 +14,10 @@
 .options {
     background-color: var(--listbox-bg);
     position: absolute;
-    z-index: 100000;
+    z-index: var(--box-z-index);
     border-radius: 12px;
     box-shadow: 4px 4px 8px var(--listbox-bg);
     min-width: calc(100% + 30px);
-
-
-
 }
 
 .item {
